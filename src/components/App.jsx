@@ -16,7 +16,7 @@ state = {
 }
 
 countTotalFeedback = ()=>{
-  return Object.values(this.state).filter(item => item === +item).reduce((acc, item) => (acc += item), 0);
+  return Object.values(this.state).reduce((acc, item) => (acc += item), 0);
 }
 
 countPositiveFeedbackPercentage=()=>{
