@@ -3,19 +3,19 @@ import {FeedbackList, FeedbackItem, Feedbacklabel,FeedbackQuantity, FeedbackInfo
 
 const Statistics =({good, neutral, bad, total, positivePercentage})=>{
     return (
-<>
+        <>
         <FeedbackList> 
             <FeedbackItem>
             <Feedbacklabel>Good</Feedbacklabel>
             <FeedbackQuantity>{good}</FeedbackQuantity>
             </FeedbackItem>
             <FeedbackItem>
-            <Feedbacklabel>Bad</Feedbacklabel>
-            <FeedbackQuantity>{bad}</FeedbackQuantity>
-            </FeedbackItem>
-            <FeedbackItem>
             <Feedbacklabel>Neutral</Feedbacklabel>
             <FeedbackQuantity>{neutral}</FeedbackQuantity>
+            </FeedbackItem>
+            <FeedbackItem>
+            <Feedbacklabel>Bad</Feedbacklabel>
+            <FeedbackQuantity>{bad}</FeedbackQuantity>
             </FeedbackItem>
         </FeedbackList>
 

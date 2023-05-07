@@ -34,3 +34,8 @@ export const FeedbackOptionsBtn = styled.button`
     }
 
 `;
+
+export const FeedbackMessage = styled.p`
+    margin-bottom: 0; 
+    text-align: center;
+`;

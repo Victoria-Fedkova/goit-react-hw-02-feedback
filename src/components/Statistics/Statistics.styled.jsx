@@ -9,11 +9,12 @@ export const FeedbackInfo = styled.p`
   font-weight: 700;
 `;
 export const FeedbackList = styled.ul`
-padding:0;
+  padding:0;
+  margin-top: 0;
   list-style: none;
   display: flex;
   height: 50px;
-  background-color: #e4e7f2;
+  background-color: #e3e9ed;
   border: 1px solid #7c85a6;
 
 `;

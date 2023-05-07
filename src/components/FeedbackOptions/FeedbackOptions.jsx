@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import{FeedbackWrapper, FeedbackOptionsBtn} from './FeedbackOptions.styled'
+import{FeedbackWrapper, FeedbackOptionsBtn, FeedbackMessage} from './FeedbackOptions.styled'
 
 const FeedbackOptions = ({options, onLeaveFeedback, message}) => { 
   const smiles ={
@@ -9,6 +9,7 @@ const FeedbackOptions = ({options, onLeaveFeedback, message}) => {
   }
 
     return(
+      <>
     <FeedbackWrapper>
         {Object.keys(options).map(key =>(
         <FeedbackOptionsBtn 
@@ -17,9 +18,10 @@ const FeedbackOptions = ({options, onLeaveFeedback, message}) => {
         name={key} 
         onClick={onLeaveFeedback}
         >{`${smiles[key]} ${key} `}</FeedbackOptionsBtn>))}
-        { message && (<p>{message}</p>)}
     </FeedbackWrapper>
-    
+    { message && (<FeedbackMessage>{message}</FeedbackMessage>)}
+
+    </>
     )
 }
 

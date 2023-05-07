@@ -5,16 +5,18 @@ import Statistics from "./Statistics";
 import Notification from "./Notification";
 import {Container} from './App.styled'
 
+let message;
+
 class App extends Component {
 
 state = {
   good: 0,
   neutral: 0,
-  bad: 0
+  bad: 0,
 }
 
 countTotalFeedback = ()=>{
-  return Object.values(this.state).reduce((acc, item) => (acc += item), 0);
+  return Object.values(this.state).filter(item => item === +item).reduce((acc, item) => (acc += item), 0);
 }
 
 countPositiveFeedbackPercentage=()=>{
@@ -31,21 +33,19 @@ handleLeaveFeedback=(e)=>{
   this.setState(prevState =>({
     [name]: prevState[name] +1,
   }));
-  // this.createMessage(name)
+  this.createMessage(name)
 
 }
-// createMessage=(name) =>{
-//   // let message = null;
-  
-//   if(name === 'bad'){
-//     message = 'Sorry to heard that 😢! Thank you for the feedback'
-//   } else if(name === 'neutral'){
-//     message = 'OK! Thank you 😐'
-//   } else {
-//     message = 'Great! Thank you 😁'
-//   }
-//   return message;
-// }
+createMessage=(name) =>{
+  if(name === 'bad'){
+    message = 'Sorry to heard that 😢! Thank you for the feedback'
+  } else if(name === 'neutral'){
+    message = 'OK! Thank you 😐';
+  } else {
+    message = 'Great! Thank you 😁';
+  }
+
+}
 
 render(){
 const {good, neutral, bad} = this.state;
@@ -54,7 +54,7 @@ const positive = this.countPositiveFeedbackPercentage();
   return (
     <Container>
       <Section title="Please leave your feedback">
-        <FeedbackOptions options={{good, neutral, bad}} onLeaveFeedback={this.handleLeaveFeedback} />
+        <FeedbackOptions options={{good, neutral, bad}} onLeaveFeedback={this.handleLeaveFeedback} message={message}/>
       </Section>
 
       <Section title="Statistics">
@@ -64,7 +64,6 @@ const positive = this.countPositiveFeedbackPercentage();
       </Section>
     </Container>
   );
-
 }
 };
 
