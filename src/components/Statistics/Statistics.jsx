@@ -7,20 +7,20 @@ const Statistics =({good, neutral, bad, total, positivePercentage})=>{
         <FeedbackList> 
             <FeedbackItem>
             <Feedbacklabel>Good</Feedbacklabel>
-            <FeedbackQuantity>{good}</FeedbackQuantity>
+            <FeedbackQuantity>{good} 👍</FeedbackQuantity>
             </FeedbackItem>
             <FeedbackItem>
             <Feedbacklabel>Neutral</Feedbacklabel>
-            <FeedbackQuantity>{neutral}</FeedbackQuantity>
+            <FeedbackQuantity>{neutral} 👌</FeedbackQuantity>
             </FeedbackItem>
             <FeedbackItem>
             <Feedbacklabel>Bad</Feedbacklabel>
-            <FeedbackQuantity>{bad}</FeedbackQuantity>
+            <FeedbackQuantity>{bad} 👎</FeedbackQuantity>
             </FeedbackItem>
         </FeedbackList>
 
         <FeedbackInfo>Total: {total}</FeedbackInfo>
-        <FeedbackInfo>Positive feedback: {positivePercentage}%</FeedbackInfo>
+        <FeedbackInfo>Positive feedback: {positivePercentage}% {positivePercentage > 50 ? '👍':'👎'}</FeedbackInfo>
 
         </>
     )

@@ -16,6 +16,7 @@ export const FeedbackList = styled.ul`
   height: 50px;
   background-color: #e3e9ed;
   border: 1px solid #7c85a6;
+  border-radius:5px;
 
 `;
 export const FeedbackItem = styled.li`
@@ -32,11 +33,11 @@ export const FeedbackItem = styled.li`
 `;
 export const Feedbacklabel = styled.span`
   color: grey;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   margin-bottom: 6px;
 `;
 export const FeedbackQuantity = styled.span`
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
 `;

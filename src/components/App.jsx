@@ -40,9 +40,9 @@ createMessage=(name) =>{
   if(name === 'bad'){
     message = 'Sorry to heard that 😢! Thank you for the feedback'
   } else if(name === 'neutral'){
-    message = 'OK! Thank you 😐';
+    message = 'OK! Thank you 🙂';
   } else {
-    message = 'Great! Thank you 😁';
+    message = 'Great! Thank you 😍';
   }
 
 }
