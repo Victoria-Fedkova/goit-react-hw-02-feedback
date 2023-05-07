@@ -1,0 +1,41 @@
+import styled from "styled-components";
+
+
+export const FeedbackInfo = styled.p`
+  margin:0;
+  padding:0;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 700;
+`;
+export const FeedbackList = styled.ul`
+padding:0;
+  list-style: none;
+  display: flex;
+  height: 50px;
+  background-color: #e4e7f2;
+  border: 1px solid #7c85a6;
+
+`;
+export const FeedbackItem = styled.li`
+  display: flex;
+  width: calc(100% / 3);
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &:not(:last-child) {
+    border-right: 1px solid #7c85a6;
+  }
+  
+`;
+export const Feedbacklabel = styled.span`
+  color: grey;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+`;
+export const FeedbackQuantity = styled.span`
+  font-size: 18px;
+  font-weight: 600;
+`;
