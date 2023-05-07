@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const FeedbackOptions = ({options, onLeaveFeedback}) => { 
     return(
     <div>
@@ -12,4 +14,9 @@ const FeedbackOptions = ({options, onLeaveFeedback}) => {
     )
 }
 
-export default FeedbackOptions
+ FeedbackOptions.propTypes = {
+    options: PropTypes.objectOf(PropTypes.number).isRequired,
+    onLeaveFeedback: PropTypes.func.isRequired,
+  };
+
+export default FeedbackOptions;
