@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const FeedbackWrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: nowrap;
+  padding-bottom: 15px;
 `;
 
 export const FeedbackOptionsBtn = styled.button`
@@ -32,11 +34,14 @@ export const FeedbackOptionsBtn = styled.button`
   &:active {
     background-color: #000;
     color: #e3e9ed;
-    /* transition: all 200ms ease-in-out; */
   }
 `;
 
 export const FeedbackMessage = styled.p`
+  position: absolute;
+  top: 125px;
+  left: 50%;
+  transform: translateX(-50%);
   margin-bottom: 0;
   text-align: center;
 `;

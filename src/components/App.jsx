@@ -28,7 +28,7 @@ class App extends Component {
     this.setState(prevState => ({
       [name]: prevState[name] + 1,
     }));
-    this.createMessage(name);
+    this.createMessage(name); // виклик методу createMessage що виводить повідомлення при натисканні на кнопку
   };
   createMessage = name => {
     if (name === 'bad') {
@@ -38,6 +38,10 @@ class App extends Component {
     } else {
       message = 'Great! Thank you 😍';
     }
+    setTimeout(() => {
+      message = '';
+      this.setState(prevState => ({ ...prevState }));
+    }, 1500); // костиль для ререндеру message, щоб зникало повідомлення, бо по умові ДЗ не можна змінювати state
   };
 
   render() {
