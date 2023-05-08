@@ -23,10 +23,6 @@ countPositiveFeedbackPercentage=()=>{
   return Math.round(this.state.good / this.countTotalFeedback() * 100);
 }
 
-positiveFeedbacks =()=>{
-return this.state.good / this.countTotalFeedback() * 100;
-}
-
 handleLeaveFeedback=(e)=>{
   const {name} = e.currentTarget; 
 
@@ -44,17 +40,18 @@ createMessage=(name) =>{
   } else {
     message = 'Great! Thank you 😍';
   }
-
 }
 
 render(){
 const {good, neutral, bad} = this.state;
 const total = this.countTotalFeedback();
 const positive = this.countPositiveFeedbackPercentage();
+const options = Object.keys(this.state);
+
   return (
     <Container>
       <Section title="Please leave your feedback">
-        <FeedbackOptions options={{good, neutral, bad}} onLeaveFeedback={this.handleLeaveFeedback} message={message}/>
+        <FeedbackOptions options={options} onLeaveFeedback={this.handleLeaveFeedback} message={message}/>
       </Section>
 
       <Section title="Statistics">

@@ -11,7 +11,7 @@ const FeedbackOptions = ({options, onLeaveFeedback, message}) => {
     return(
       <>
     <FeedbackWrapper>
-        {Object.keys(options).map(key =>(
+        {options.map(key =>(
         <FeedbackOptionsBtn 
         key={key} 
         type="button" 
@@ -26,7 +26,7 @@ const FeedbackOptions = ({options, onLeaveFeedback, message}) => {
 }
 
  FeedbackOptions.propTypes = {
-    options: PropTypes.objectOf(PropTypes.number).isRequired,
+    options: PropTypes.arrayOf(PropTypes.string).isRequired,
     onLeaveFeedback: PropTypes.func.isRequired,
   };
 
